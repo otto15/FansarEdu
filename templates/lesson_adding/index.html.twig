@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+{% block title %} Добавление занятия {% endblock %}
+{% block content %}
+    <div class="container form-container">
+        <h1>Добро пожаловать, sensei!</h1><br>
+        <form action="Post">
+            <div class="form-group">
+                <label for="sub_choice">Выберите предмет, по которому хотите составить занятие</label>
+                <select class="form-control" id="sub_choice">
+                    <option>Физика</option>
+                </select>
+            </div>
+            <hr>
+            <div class="form-group">
+                <label for="topic">Тема занятия</label>
+                <input type="text" id="topic" class="form-control" placeholder="Например, Архимедова сила.">
+            </div>
+            <div class="form-group">
+                <label for="article">Текстовое объяснение темы</label>
+                <textarea id="article" class="form-control" placeholder="Ваш текст"></textarea>
+            </div>
+            <hr>
+            <div class="form-group">
+                <label for="video_add">Ссылка на видеоурок</label>
+                <input type="text" id="video_add" class="form-control" placeholder="www.ramazankruchevseh.com">
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-3">
+                    <label for="term">Термин</label>
+                    <input type="text" id="term" class="form-control" placeholder="Термин">
+                </div>
+                <div class="col-9">
+                    <label for="definition">Определение</label>
+                    <textarea id="definition" class="form-control" placeholder="Определение"></textarea>
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <button type="button" class="btn btn-info">Добавить ещё</button>
+            </div>
+            <hr>
+            <div class="form-group">
+                <label for="add_question">Добавить задание и варианты ответа</label>
+                <input type="text" id="add_question" class="form-control" placeholder="1 + 1 = ?">
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="term">Вариант №1</label>
+                    <input type="text" id="term" class="form-control" placeholder="Термин">
+                </div>
+                <div class="col">
+                    <label for="term">Вариант №2</label>
+                    <input type="text" id="term" class="form-control" placeholder="Термин">
+                </div>
+                <div class="col">
+                    <label for="term">Вариант №3</label>
+                    <input type="text" id="term" class="form-control" placeholder="Термин">
+                </div>
+                <div class="col">
+                    <label for="term">Вариант №4</label>
+                    <input type="text" id="term" class="form-control" placeholder="Термин">
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <button type="button" class="btn btn-info">Добавить ещё</button>
+            </div>
+            <br>
+            <div class="form row justify-content-center">
+                <button type="button" class="btn btn-primary">Добавить занятие!</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

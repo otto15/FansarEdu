@@ -7,11 +7,15 @@ body{
 }
 
 a{
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Noto Sans', serif;
+}
+
+a:hover{
+    text-decoration: none;
 }
 
 header{
-    background: #3a68c6;
+    background: #595bdc;
 }
 
 .navbar-brand{
@@ -20,6 +24,7 @@ header{
 
 .nav-link{
     font-size: 1.2em;
+    text-align: center;
     color: #f6f6f6;
 }
 
@@ -35,32 +40,85 @@ header{
 content{
     flex: 25 1 auto;
     background: #f6f6f6;
-    padding-top: 20px;
+}
+
+.main-container{
+    padding: 0;
+    margin: 20px auto;
+    margin-bottom: 0;
+}
+
+h2{
+    color: #5d4fff;
 }
 
 .subject{
     color: #f6f6f6;
+    text-align: center;
+    padding: 0;
 }
 
-.subject>a{
-    border: 1px solid #D3D3D3;
-    border-radius: 40px;
-    padding: 5px 30%;
-    font-size: 1.5rem;
+.sub{
+    background: #dfe8ee;
+    border-radius: 20px;
+}
+
+.sub-img{
+    width: 10vw;
 }
 
 .lesson-description{
-    border: 1px solid #D3D3D3;
-    border-radius: 40px;
-    height: 15vh;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    background: #dfe8ee;
+    color: #222222;
 }
 
-.main-container{
-    width: 91vw;
-    margin: 0 auto;
+.article-detail{
+    display: flex;
 }
 
-footer{
+.article-detail>p{
+    margin: auto 0;
+    padding: 0 15px;
+}
+
+/*footer{
     flex: 2 1 auto;
     background: #cecdd4;
+}*/
+
+.footer {
+    width: 100%;
+    height: 5vh;
+    background: #6d6fe3;
+    color: white;
+    display: flex;
+    align-items: center;
 }
+
+.footer>.container>p{
+    margin: auto;
+}
+
+.klondike-container{
+    width: 80vw;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.product-item{
+    margin-bottom: 20px;
+}
+
+.prod-img{
+    width: 280px;
+}
+
+.form-container{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+

@@ -11,7 +11,7 @@ class EducationController extends AbstractController
     /**
      * @Route("/", name="education")
      */
-    public function reditectAction()
+    public function redirectAction()
     {
         return $this->redirectToRoute('education');
     }
