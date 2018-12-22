@@ -1,5 +1,8 @@
 {% extends 'base.html.twig' %}
 {% block title %} Добавление занятия {% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="/css/lesson_adding.css">
+{% endblock %}
 {% block content %}
     <div class="container form-container">
         <h1>Добро пожаловать, sensei!</h1><br>
@@ -25,51 +28,60 @@
                 <input type="text" id="video_add" class="form-control" placeholder="www.ramazankruchevseh.com">
             </div>
             <hr>
-            <div class="row">
-                <div class="col-3">
-                    <label for="term">Термин</label>
-                    <input type="text" id="term" class="form-control" placeholder="Термин">
-                </div>
-                <div class="col-9">
-                    <label for="definition">Определение</label>
-                    <textarea id="definition" class="form-control" placeholder="Определение"></textarea>
+            <div class="terms">
+                <div class="row first-term">
+                    <div class="col-3">
+                        <label for="term">Термин №1</label>
+                        <input type="text" id="term" class="form-control" placeholder="Термин">
+                    </div>
+                    <div class="col-9">
+                        <label for="definition">Определение</label>
+                        <textarea id="definition" class="form-control" placeholder="Определение"></textarea>
+                    </div>
                 </div>
             </div>
             <br>
             <div class="form-group">
-                <button type="button" class="btn btn-info">Добавить ещё</button>
+                <button type="button" class="btn btn-to-add-more-terms btn-info">Добавить ещё</button>
             </div>
             <hr>
-            <div class="form-group">
-                <label for="add_question">Добавить задание и варианты ответа</label>
-                <input type="text" id="add_question" class="form-control" placeholder="1 + 1 = ?">
-            </div>
-            <div class="row">
-                <div class="col">
-                    <label for="term">Вариант №1</label>
-                    <input type="text" id="term" class="form-control" placeholder="Термин">
-                </div>
-                <div class="col">
-                    <label for="term">Вариант №2</label>
-                    <input type="text" id="term" class="form-control" placeholder="Термин">
-                </div>
-                <div class="col">
-                    <label for="term">Вариант №3</label>
-                    <input type="text" id="term" class="form-control" placeholder="Термин">
-                </div>
-                <div class="col">
-                    <label for="term">Вариант №4</label>
-                    <input type="text" id="term" class="form-control" placeholder="Термин">
+            <div class="quest-list">
+                <div class="quest first-quest">
+                    <div class="form-group">
+                        <label for="add_question">Добавить задание №1 и варианты ответа</label>
+                        <input type="text" id="add_question" class="form-control" placeholder="1 + 1 = ?">
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="term">Вариант №1</label>
+                            <input type="text" id="term" class="form-control" placeholder="Термин">
+                        </div>
+                        <div class="col">
+                            <label for="term">Вариант №2</label>
+                            <input type="text" id="term" class="form-control" placeholder="Термин">
+                        </div>
+                        <div class="col">
+                            <label for="term">Вариант №3</label>
+                            <input type="text" id="term" class="form-control" placeholder="Термин">
+                        </div>
+                        <div class="col">
+                            <label for="term">Вариант №4</label>
+                            <input type="text" id="term" class="form-control" placeholder="Термин">
+                        </div>
+                    </div>
                 </div>
             </div>
             <br>
-            <div class="form-group">
+            <div class="form-group btn-to-add-more-quest">
                 <button type="button" class="btn btn-info">Добавить ещё</button>
             </div>
             <br>
             <div class="form row justify-content-center">
-                <button type="button" class="btn btn-primary">Добавить занятие!</button>
+                <button type="button" class="btn btn-submit btn-primary">Добавить занятие!</button>
             </div>
         </form>
     </div>
+{% endblock %}
+{% block javascripts %}
+    <script src="/scripts/lesson_adding.js"></script>
 {% endblock %}

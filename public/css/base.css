@@ -6,7 +6,7 @@ body{
     padding: 0;
 }
 
-a{
+a, h1, h2{
     font-family: 'Noto Sans', serif;
 }
 
@@ -15,7 +15,7 @@ a:hover{
 }
 
 header{
-    background: #595bdc;
+    background: #367ABD;
 }
 
 .navbar-brand{
@@ -90,15 +90,20 @@ h2{
 
 .footer {
     width: 100%;
-    height: 5vh;
-    background: #6d6fe3;
+    height: 50px;
+    background: #367ABD;
     color: white;
-    display: flex;
-    align-items: center;
+    /*display: flex;
+    align-items: center;*/
 }
 
-.footer>.container>p{
-    margin: auto;
+.footer-container{
+    height: 50px;
+    display: flex;
+}
+
+.footer>.container>span{
+    margin: auto 0;
 }
 
 .klondike-container{
@@ -122,3 +127,33 @@ h2{
     margin-bottom: 20px;
 }
 
+.lesson{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.lesson>h1{
+    text-align: center;
+}
+
+.lesson>p{
+    font-size: 1.3rem;
+}
+
+.lesson>iframe{
+    display: block;
+    margin: 0 auto;
+}
+
+.lesson>h2{
+    color: #343a40;
+}
+
+.termins-for-add{
+    margin-top: 20px;
+}
+
+.plus-img>a{
+    color: black;
+    font-size: 20px;
+}
