@@ -6,37 +6,43 @@
 {% block content %}
     <div class="container form-container">
         <h1>Добро пожаловать, sensei!</h1><br>
-        <form action="Post">
+        <form method="Post" action="/createLesson">
             <div class="form-group">
                 <label for="sub_choice">Выберите предмет, по которому хотите составить занятие</label>
-                <select class="form-control" id="sub_choice">
-                    <option>Физика</option>
+                <select class="form-control" name="sub_choice" id="sub_choice">
+                    {% for subject in sub_array %}
+                        <option value="{{ subject.id }}">{{ subject.name}}</option>
+                    {% endfor %}
                 </select>
             </div>
             <hr>
             <div class="form-group">
                 <label for="topic">Тема занятия</label>
-                <input type="text" id="topic" class="form-control" placeholder="Например, Архимедова сила.">
+                <input type="text" name="topic" id="topic" class="form-control" placeholder="Например, Архимедова сила.">
+            </div>
+            <div class="form-group">
+                <label for="descript">Краткое описание темы</label>
+                <textarea id="descript" name="short_description" class="form-control" placeholder="Архимедова сила - это ..."></textarea>
             </div>
             <div class="form-group">
                 <label for="article">Текстовое объяснение темы</label>
-                <textarea id="article" class="form-control" placeholder="Ваш текст"></textarea>
+                <textarea id="article" name="main_description" class="form-control" placeholder="Ваш текст"></textarea>
             </div>
             <hr>
             <div class="form-group">
                 <label for="video_add">Ссылка на видеоурок</label>
-                <input type="text" id="video_add" class="form-control" placeholder="www.ramazankruchevseh.com">
+                <input type="text" name="videolink" id="video_add" class="form-control" placeholder="www.ramazankruchevseh.com">
             </div>
             <hr>
             <div class="terms">
                 <div class="row first-term">
                     <div class="col-3">
                         <label for="term">Термин №1</label>
-                        <input type="text" id="term" class="form-control" placeholder="Термин">
+                        <input type="text" name="term[]" value="" id="term" class="form-control" placeholder="Термин">
                     </div>
                     <div class="col-9">
                         <label for="definition">Определение</label>
-                        <textarea id="definition" class="form-control" placeholder="Определение"></textarea>
+                        <textarea id="definition" name="def[]" value="" class="form-control" placeholder="Определение"></textarea>
                     </div>
                 </div>
             </div>
@@ -49,24 +55,28 @@
                 <div class="quest first-quest">
                     <div class="form-group">
                         <label for="add_question">Добавить задание №1 и варианты ответа</label>
-                        <input type="text" id="add_question" class="form-control" placeholder="1 + 1 = ?">
+                        <input type="text" id="add_question" name="quest[]" class="form-control" placeholder="1 + 1 = ?">
                     </div>
-                    <div class="row">
+                    <div class="row answer-list">
                         <div class="col">
-                            <label for="term">Вариант №1</label>
-                            <input type="text" id="term" class="form-control" placeholder="Термин">
+                            <label for="term">Вариант ответа №1</label>
+                            <input type="text" name="answers0[]" class="form-control" placeholder="2">
+                            <input type="radio" value="0" name="isCorrect0">
                         </div>
                         <div class="col">
-                            <label for="term">Вариант №2</label>
-                            <input type="text" id="term" class="form-control" placeholder="Термин">
+                            <label for="term">Вариант ответа №2</label>
+                            <input type="text" name="answers0[]" class="form-control" placeholder="3">
+                            <input type="radio" value="1" name="isCorrect0">
                         </div>
                         <div class="col">
-                            <label for="term">Вариант №3</label>
-                            <input type="text" id="term" class="form-control" placeholder="Термин">
+                            <label for="term">Вариант ответа №3</label>
+                            <input type="text" name="answers0[]" class="form-control" placeholder="4">
+                            <input type="radio" value="2" name="isCorrect0">
                         </div>
                         <div class="col">
-                            <label for="term">Вариант №4</label>
-                            <input type="text" id="term" class="form-control" placeholder="Термин">
+                            <label for="term">Вариант ответа №4</label>
+                            <input type="text" name="answers0[]" class="form-control" placeholder="5">
+                            <input type="radio" value="3" name="isCorrect0">
                         </div>
                     </div>
                 </div>
@@ -77,7 +87,7 @@
             </div>
             <br>
             <div class="form row justify-content-center">
-                <button type="button" class="btn btn-submit btn-primary">Добавить занятие!</button>
+                <button type="submit" class="btn btn-submit btn-primary">Добавить занятие!</button>
             </div>
         </form>
     </div>

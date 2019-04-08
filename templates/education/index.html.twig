@@ -6,25 +6,30 @@
 {% block content %}
     <div class="container main-container row">
         <div class="col-3 column">
-            <div class="col subject">
-                <a href="#" class="sub-link">
-                    <div class="sub">
-                        <img src="/img/physic.png" alt="Atom, physic's logo" class="sub-img">
-                        <h2>Физика</h2>
-                    </div>
-                </a>
-            </div>
+            {% for subject in sub_array %}
+                <div class="col subject">
+                    <a href="/education/{{ subject.id }}/lessons" class="sub-link">
+                        <div class="sub">
+                            <img src="/img/subject_{{ subject.id }}.png" alt="{{ subject.name }} logo" class="sub-img">
+                            <h2>{{ subject.name }}</h2>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
         </div>
         <div class="col-9">
-            <a href="/education/lesson">
-                <div class="col lesson-description">
-                    <h3>Headline</h3>
-                    <div class="article-detail row justify-content-between">
-                        <p>12.12.12</p>
-                        <p>user</p>
+            {%  for lesson in lesson_array %}
+                <a href="/education/lessons/{{ lesson.id }}">
+                    <div class="col lesson-description">
+                        <h3>{{ lesson.topic }}</h3>
+                        <p>{{ lesson.shortDescription }}</p>
+                        <div class="article-detail row justify-content-between">
+                            <p>{{ lesson.createdDate }}</p>
+                            <p>user</p>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
+            {% endfor %}
         </div>
     </div>
 {% endblock %}

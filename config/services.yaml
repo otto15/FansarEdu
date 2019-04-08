@@ -26,3 +26,13 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+    admin.subject:
+        class: App\Admin\SubjectAdmin
+        arguments: [~, App\Entity\Subject, ~]
+        tags:
+        - { name: sonata.admin, manager_type: orm, label: Subject }
+    admin.lesson:
+        class: App\Admin\LessonAdmin
+        arguments: [~, App\Entity\Lesson, ~]
+        tags:
+        - { name: sonata.admin, manager_type: orm, label: Lesson }
