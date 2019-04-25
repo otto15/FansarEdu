@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
@@ -16,7 +17,16 @@ class KlondikeController extends AbstractController
     public function index()
     {
         return $this->render('klondike/index.html.twig', [
-            'controller_name' => 'KlondikeController',
+
         ]);
     }
+
+    /**
+     * @Route("/productAdding", name="productAdd")
+     */
+    public function productAdding() {
+
+        return $this->RedirectToRoute('klondike');
+    }
 }
+

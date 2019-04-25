@@ -141,59 +141,68 @@ h2{
 }
 
 .prod-img{
-    width: 280px;
+width: 280px;
 }
 
 .form-container{
-    margin-top: 20px;
-    margin-bottom: 20px;
+margin-top: 20px;
+margin-bottom: 20px;
 }
 
 .lesson{
-    margin-top: 20px;
-    margin-bottom: 20px;
+margin-top: 20px;
+margin-bottom: 20px;
 }
 
 .lesson>h1{
-    text-align: center;
+text-align: center;
 }
 
 .lesson>p{
-    font-size: 1.3rem;
+font-size: 1.3rem;
 }
 
 .lesson>iframe{
-    display: block;
-    margin: 0 auto;
+display: block;
+margin: 0 auto;
 }
 
 .lesson>h2{
-    color: #343a40;
+color: #343a40;
 }
 
 .termins-for-add{
-    margin-top: 20px;
+margin-top: 20px;
 }
 
 .font-img>a>i{
-    color: black;
-    font-size: 20px;
+color: black;
+font-size: 20px;
 }
 
 .answer-list{
-    padding: 0;
+padding: 0;
 }
 
 .btn-to-add-more-choice{
-    margin: 0;
+margin: 0;
 }
 
 .single-test{
-    border-bottom: 2px solid black;
-    margin-bottom: 30px;
+padding-bottom: 10px;
+border-bottom: 2px solid black;
+margin-bottom: 30px;
 }
 
 .hidden-obj-id{
-    visibility: hidden;
-    position: absolute;
+visibility: hidden;
+position: absolute;
+}
+
+.hover_choice{
+    display: none;
+}
+
+.lesson-adding > a:hover > .hover_choice{
+    display: block;
 }
